@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- importar el archivo animacion.css -->
+    <style>
+        p{
+        font-family: 'Courier New', Courier, monospace;
+        color: crimson;
+        width: 100%;
+
+        }
+
+        div{
+            /* inlineblock */
+            display: inline-block;
+            /* border: 1px solid black; */
+            width: 50%;
+            height: 500px;
+            /* pading 0 */
+            padding: 0;
+            background-color: aquamarine;
+        }
+    </style>
+
+    <title>animeciones</title>
+</head>
+<body>
+
+    <div>
+        
+        <!-- pedir datos -->
+        <form action="animecion.php" method="post">
+            <p>Ingrese el numero de veces que quiere que se repita la animacion:</p>
+            <input type="number" name="numero" value="">
+            <input type="submit" value="Enviar">
+        </form>
+
+        <!-- mostrar datos -->
+        <?php
+            if(isset($_POST['numero'])){
+                $numero = $_POST['numero'];
+                for($i=0; $i<$numero; $i++){
+                    echo "<p>Hola mundo</p>";
+                }
+            }
+        ?>
+        
+    </div>
+    
+</body>
+</html>
